@@ -1,4 +1,10 @@
+# Ignoring all executables and .o files
 *
+!/**/
 !*.*
-.DS_Store
+
 *.o
+
+# System files
+.DS_Store
+
