@@ -5,8 +5,8 @@
 */
 
 /* SOLUTION DESCRIPTION:
- * 
- * 
+ * The solution is the implementation of the one described at lesson.
+ * Time and space complexity is O ( N ).
 */
 
 
