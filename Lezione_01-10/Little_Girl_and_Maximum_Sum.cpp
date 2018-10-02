@@ -6,7 +6,7 @@
 
 /* SOLUTION DESCRIPTION:
  * This is the implementation of the solution presentsded at lecture.
- * Complexity: O( N + Q ) in time, O( N ) in space.
+ * Complexity: O( NlogN + Q ) in time, O( N ) in space.
  * 
 */
 
