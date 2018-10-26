@@ -4,6 +4,7 @@
 !*.*
 
 *.o
+*.dSYM
 
 # System files
 .DS_Store
