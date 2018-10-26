@@ -37,7 +37,7 @@ class Fenwick {
 		}
 		
 		void update( int k, int v ) {
-			while( k < ft.size() ) {
+			while( (unsigned int )k < ft.size() ) {
 				ft[k] += v;
 				k += k & (-k);
 			}
