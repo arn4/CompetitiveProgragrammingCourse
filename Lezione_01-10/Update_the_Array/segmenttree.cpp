@@ -4,8 +4,7 @@
 */
 
 /* SOLUTION DESCRIPTION:
- * The solution uses a modiefied version of BIT, that supports query and
- * update on ranges, as described here: https://kartikkukreja.wordpress.com/2013/12/02/range-updates-with-bit-fenwick-tree/
+ * The solution is an implementation of RSQ with Segment Tree.
  * The complexity is O( T*(U + Q)logN ) in time and O( N ) in space.
  * 
 */
