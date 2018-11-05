@@ -60,6 +60,9 @@ void remove( int i ) {
 int main() {
 	
 	ios_base::sync_with_stdio(false);
+	cin.tie(0);
+	cout.tie(0);
+	#define endl '\n'
 	
 	cin >> n >> q;
 	for( int i = 1; i <= n; i++ ) {
