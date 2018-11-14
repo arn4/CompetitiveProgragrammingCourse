@@ -5,7 +5,7 @@
 */
 
 /* SOLUTION DESCRIPTION:
- * 
+ * Implementation of Kruskal algotithm.
  * 
 */
 
