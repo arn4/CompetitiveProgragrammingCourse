@@ -5,7 +5,12 @@
 */
 
 /* SOLUTION DESCRIPTION:
- * 
+ * We use the string ans as a stack. We scan S and remove all characters
+ * at the top of the stack until we find one that is greater or equal than
+ *  the actual char in S; then we insert the actual char in the stack ans.
+ * It's easy to convice that we obtain the correct answer this way.
+ * Since a char can enter and exit from the stack at most once, time and 
+ * space complexity is O(size(S)).
  * 
 */
 
