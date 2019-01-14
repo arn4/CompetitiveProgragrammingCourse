@@ -4,7 +4,7 @@
  * Competitive Programming and Contest, a.a. 2018-2019
 */
 
-/* BINARY INDEXED TREE
+/* SOLUTION DESCRIPTION:
  * 
  * 
 */
@@ -75,40 +75,63 @@ class RangeFenwick {
 		
 };
 
+struct Query{
+	int i, j, X, ans;
+	
+	Query(int i_ = 0, int j_ = 0, int X_ = 0) {
+		i = i_;
+		j = j_;
+		X = X_;
+	}
+};
+
+
+
 int main() {
 	
-	// Test Fenwick
-	Fenwick F = Fenwick( 8 );
+	ios_base::sync_with_stdio(false);
+	cin.tie(0);
+	cout.tie(0);
+	#define endl '\n'
 	
-	F.update( 1, 3 );
-	F.update( 2, 2 );
-	F.update( 3, -1 );
-	F.update( 4, 5 );
-	F.update( 5, 7 );
-	F.update( 6, -3 );
-	F.update( 7, 2 );
-	F.update( 8, 1 );
+	int n, m;
+	vector<int> A;
+	vector<vector<int>> GA;
+	vector<vector<int>> GQ;
+	vector<Query> Q;
 	
-	cout << F.query( 7 ) << endl;
-	cout << F.query( 3 ) << endl;
+	cin >> n >> m;
 	
-	F.update( 3, 3 );
+	A.resize(n);
+	GA.resize(n+1);
+	for(int i = 0; i < n; i++) {
+		cin >> A[i];
+		GA[A[i]].push_back(i);
+	}
 	
-	cout << F.query( 3 ) << endl;
+	Q.resize(m);
+	GQ.resize(n+1);
+	for(int i = 0; i < m; i++) {
+		cin >> Q[i].i >> Q[i].j >> Q[i].X;
+		Q[i].X = min(Q[i].X, n);
+		GQ[Q[i].X].push_back(i);
+	}
 	
-	// Test RangeFenwick
-	RangeFenwick RF = RangeFenwick( 8 );
+	auto FT = RangeFenwick(n);
+	for(int i = 0; i <= n; i++) {
+		//cout << "Processing " << i << endl;
+		for(auto j: GA[i]) {
+			//cout << "	Inserting " << j << ": " << A[j] << endl;
+			FT.update(j+1, j+1, 1);
+		}
+		for(auto j: GQ[i]) {
+			//cout << "	Answering " << j << ": " << Q[j].i << ' ' << Q[j].j << ' ' << Q[j].X << ' '<< endl;
+			Q[j].ans = FT.query(Q[j].i+1, Q[j].j+1);
+		}
+	}
 	
-	RF.update( 1, 8, 5);
-	RF.update( 2, 7, 4);
-	RF.update( 3, 6, 3);
-	RF.update( 4, 5, 2);
+	for(auto& q: Q) 
+		cout << q.ans << endl;
 	
-	cout << RF.query( 1, 8 ) << endl;
-	cout << RF.query( 5, 5 ) << endl;
-	
-	RF.update( 4, 4, 100 );
-	
-	cout << RF.query( 4, 7 ) << endl;
-	
+	return 0;
 }
