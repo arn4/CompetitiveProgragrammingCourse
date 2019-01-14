@@ -1,4 +1,4 @@
+Opzioanli:
+Kosaraju Algorithm for Checkpost
 Xenia and the tree
 LIS in NlogN
-Longest prefix suffix
-Shift the string
