@@ -1,4 +1,4 @@
-Opzioanli:
 Kosaraju Algorithm for Checkpost
+Opzioanli:
 Xenia and the tree
 LIS in NlogN
